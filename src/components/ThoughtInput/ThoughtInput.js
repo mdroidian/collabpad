@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import { useMemo, useRef } from 'react';
+import { memo, useRef } from 'react';
 import clsx from 'clsx';
+import uniqid from 'uniqid';
 import './ThoughtInput.css';
 
 const styles = {
@@ -13,51 +14,50 @@ const styles = {
 	buttonDisabled: 'bg-secondary'
 };
 
-export default function ThoughtInput({ setThoughts }) {
+function ThoughtInput({ setThoughts }) {
 	const inputRef = useRef();
 
-	const displayButtons = useMemo(() => {
-		const buttons = [
-			{
-				label: 'Add Thoughts',
-				onClick: () => {
-					setThoughts((prevThoughts) => [
-						{
-							text: inputRef.current.value,
-							date: new Date(Date.now()),
-							...prevThoughts
-						}
-					]);
-					inputRef.current.value = '';
-				},
-				disabled: false
+	const buttons = [
+		{
+			label: 'Add Thoughts',
+			onClick: () => {
+				setThoughts((prevThoughts) => [
+					{
+						id: uniqid(),
+						text: inputRef.current.value,
+						date: new Date(Date.now()),
+						...prevThoughts
+					}
+				]);
+				inputRef.current.value = '';
 			},
-			{
-				label: 'Link Thought',
-				onClick: () => {},
-				disabled: true
-			},
-			{
-				label: 'Tag Thought',
-				onClick: () => {},
-				disabled: true
-			}
-		];
+			disabled: false
+		},
+		{
+			label: 'Link Thought',
+			onClick: () => {},
+			disabled: true
+		},
+		{
+			label: 'Tag Thought',
+			onClick: () => {},
+			disabled: true
+		}
+	];
 
-		const getButtonClassName = (buttonDisabled) =>
-			clsx(styles.button, buttonDisabled ? styles.buttonDisabled : styles.buttonEnabled);
+	const getButtonClassName = (buttonDisabled) =>
+		clsx(styles.button, buttonDisabled ? styles.buttonDisabled : styles.buttonEnabled);
 
-		return buttons.map((button, idx) => (
-			<article key={idx} className={styles.buttonContainer}>
-				<button
-					className={getButtonClassName(button.disabled)}
-					onClick={button.onClick}
-					disabled={button.disabled}>
-					{button.label}
-				</button>
-			</article>
-		));
-	}, [setThoughts]);
+	const displayButtons = buttons.map((button, idx) => (
+		<article key={idx} className={styles.buttonContainer}>
+			<button
+				className={getButtonClassName(button.disabled)}
+				onClick={button.onClick}
+				disabled={button.disabled}>
+				{button.label}
+			</button>
+		</article>
+	));
 
 	return (
 		<section className={styles.root}>
@@ -78,3 +78,5 @@ export default function ThoughtInput({ setThoughts }) {
 ThoughtInput.propTypes = {
 	setThoughts: PropTypes.func.isRequired
 };
+
+export default memo(ThoughtInput);

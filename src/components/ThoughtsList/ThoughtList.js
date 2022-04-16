@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
+import { memo } from 'react';
+import ThoughtItem from '../ThoughtItem/ThoughtItem';
 
-export default function ThoughtList({ thoughts }) {
+function ThoughtList({ thoughts }) {
+	const displayThoughts = thoughts.map((thought) => (
+		<ThoughtItem key={thought.id} thought={thought} />
+	));
+
 	return (
 		<section>
 			<h2>Thoughts</h2>
+			<div>{displayThoughts}</div>
 		</section>
 	);
 }
@@ -11,3 +18,5 @@ export default function ThoughtList({ thoughts }) {
 ThoughtList.propTypes = {
 	thoughts: PropTypes.array
 };
+
+export default memo(ThoughtList);
