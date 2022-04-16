@@ -6,11 +6,11 @@ import './ThoughtInput.css';
 import CustomButton from '../CustomButton/CustomButton';
 
 const styles = {
-	root: 'AddThoughtInput row align-items-center gx-2 mb-5',
+	root: 'AddThoughtInput row align-items-center gx-3 mb-5',
 	inputContainer: 'col-6 h-100',
 	input: 'w-100 h-100 p-2 resize-none',
 	buttonContainer: 'col-2 h-75',
-	button: 'text-white p-2 h-100',
+	button: 'text-white p-2 h-100 w-100',
 	buttonEnabled: 'bg-primary',
 	buttonDisabled: 'bg-secondary'
 };
