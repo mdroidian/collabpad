@@ -7,7 +7,7 @@ import './ThoughtItem.css';
 
 const styles = {
 	root: 'ThoughtItem row align-items-center gx-2 mb-4',
-	thoughtContainer: 'col-6 h-100 border p-2',
+	thoughtContainer: 'col-6 h-100 border p-2 overflow-auto',
 	buttonContainer: 'col-2 h-75',
 	button: 'text-white p-2 h-100',
 	buttonEnabled: 'bg-primary',

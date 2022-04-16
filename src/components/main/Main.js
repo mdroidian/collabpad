@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ThoughtInput from '../ThoughtInput/ThoughtInput';
 import ThoughtList from '../ThoughtsList/ThoughtList';
+import { dummyThoughts } from '../../dummy-data/dummy-thoughts';
 import './Main.css';
 
 const styles = {
@@ -10,7 +11,7 @@ const styles = {
 };
 
 function Main() {
-	const [thoughts, setThoughts] = useState([]);
+	const [thoughts, setThoughts] = useState(dummyThoughts);
 	console.log(thoughts);
 	return (
 		<div className={styles.root}>

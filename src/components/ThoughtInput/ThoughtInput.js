@@ -15,7 +15,7 @@ const styles = {
 	buttonDisabled: 'bg-secondary'
 };
 
-export default function ThoughtInput({ setThoughts }) {
+function ThoughtInput({ setThoughts }) {
 	const inputRef = useRef();
 
 	const buttons = [
@@ -79,3 +79,5 @@ export default function ThoughtInput({ setThoughts }) {
 ThoughtInput.propTypes = {
 	setThoughts: PropTypes.func.isRequired
 };
+
+export default memo(ThoughtInput);
