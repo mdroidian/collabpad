@@ -21,10 +21,10 @@ function Navbar() {
                     <a className="dropdown-item" href="#">Canvases</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Notes</a>
+                    <a className="dropdown-item" href="#">Journals</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Pages</a>
+                    <a className="dropdown-item" href="#">Notes</a>
                   </li>
                 </ul>
               </li>
