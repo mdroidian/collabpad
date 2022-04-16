@@ -11,7 +11,6 @@ const styles = {
 
 function Main() {
 	const [thoughts, setThoughts] = useState([]);
-	console.log(thoughts);
 
 	return (
 		<div className={styles.root}>

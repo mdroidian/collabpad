@@ -3,6 +3,7 @@ import { memo, useRef } from 'react';
 import clsx from 'clsx';
 import uniqid from 'uniqid';
 import './ThoughtInput.css';
+import CustomButton from '../CustomButton/CustomButton';
 
 const styles = {
 	root: 'AddThoughtInput row align-items-center gx-2 mb-5',
@@ -19,7 +20,7 @@ function ThoughtInput({ setThoughts }) {
 
 	const buttons = [
 		{
-			label: 'Add Thoughts',
+			label: 'Add Thought',
 			onClick: () => {
 				setThoughts((prevThoughts) => [
 					{
@@ -49,14 +50,14 @@ function ThoughtInput({ setThoughts }) {
 		clsx(styles.button, buttonDisabled ? styles.buttonDisabled : styles.buttonEnabled);
 
 	const displayButtons = buttons.map((button, idx) => (
-		<article key={idx} className={styles.buttonContainer}>
-			<button
-				className={getButtonClassName(button.disabled)}
-				onClick={button.onClick}
-				disabled={button.disabled}>
-				{button.label}
-			</button>
-		</article>
+		<CustomButton
+			key={idx}
+			onClick={button.onClick}
+			rootStyles={styles.buttonContainer}
+			buttonStyles={getButtonClassName(button.disabled)}
+			disabled={button.disabled}>
+			{button.label}
+		</CustomButton>
 	));
 
 	return (
