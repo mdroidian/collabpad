@@ -12,7 +12,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="mb-2 mb-md-0 ms-auto navbar-nav ">
               <li className="nav-item">
-                <a className="active nav-link" href="#">Dashboard</a>
+                <a className="nav-link" href="#">Dashboard</a>
               </li>
               <li className="dropdown nav-item">
                 <a className="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">Browse</a>
