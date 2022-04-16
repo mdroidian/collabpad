@@ -11,7 +11,7 @@ const styles = {
 
 function Main() {
 	const [thoughts, setThoughts] = useState([]);
-
+	console.log(thoughts);
 	return (
 		<div className={styles.root}>
 			<h2 className={styles.header}>

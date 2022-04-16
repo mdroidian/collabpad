@@ -15,20 +15,21 @@ const styles = {
 	buttonDisabled: 'bg-secondary'
 };
 
-function ThoughtInput({ setThoughts }) {
+export default function ThoughtInput({ setThoughts }) {
 	const inputRef = useRef();
 
 	const buttons = [
 		{
 			label: 'Add Thought',
 			onClick: () => {
+				const input = inputRef.current.value;
 				setThoughts((prevThoughts) => [
 					{
 						id: uniqid(),
-						text: inputRef.current.value,
-						date: new Date(Date.now()),
-						...prevThoughts
-					}
+						text: input,
+						date: new Date(Date.now())
+					},
+					...prevThoughts
 				]);
 				inputRef.current.value = '';
 			},
@@ -70,7 +71,6 @@ function ThoughtInput({ setThoughts }) {
 					name="thought"
 					placeholder="Add Thought"></textarea>
 			</div>
-
 			{displayButtons}
 		</section>
 	);
@@ -79,5 +79,3 @@ function ThoughtInput({ setThoughts }) {
 ThoughtInput.propTypes = {
 	setThoughts: PropTypes.func.isRequired
 };
-
-export default memo(ThoughtInput);
