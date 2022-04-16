@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AddThoughtInput from '../AddThoughtInput/AddThoughtInput';
+import ThoughtInput from '../ThoughtInput/ThoughtInput';
 import './Main.css';
 
 const styles = {
@@ -17,7 +17,7 @@ function Main() {
 			<h2 className={styles.header}>
 				Today | <span className={styles.headerSecondary}>Previous Days</span>
 			</h2>
-			<AddThoughtInput setThoughts={setThoughts} />
+			<ThoughtInput setThoughts={setThoughts} />
 		</div>
 	);
 }

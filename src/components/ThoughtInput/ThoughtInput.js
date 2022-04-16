@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import clsx from 'clsx';
-import './AddThoughtInput.css';
+import './ThoughtInput.css';
 
 const styles = {
 	root: 'AddThoughtInput row align-items-center gx-2',
@@ -13,7 +13,7 @@ const styles = {
 	buttonDisabled: 'bg-secondary'
 };
 
-export default function AddThoughtInput({ setThoughts }) {
+export default function ThoughtInput({ setThoughts }) {
 	const displayButtons = useMemo(() => {
 		const buttons = [
 			{
@@ -48,7 +48,7 @@ export default function AddThoughtInput({ setThoughts }) {
 				</button>
 			</div>
 		));
-	}, []);
+	}, [setThoughts]);
 
 	return (
 		<section className={styles.root}>
@@ -65,6 +65,6 @@ export default function AddThoughtInput({ setThoughts }) {
 	);
 }
 
-AddThoughtInput.propTypes = {
+ThoughtInput.propTypes = {
 	setThoughts: PropTypes.func.isRequired
 };
