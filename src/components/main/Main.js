@@ -12,7 +12,6 @@ const styles = {
 
 function Main() {
 	const [thoughts, setThoughts] = useState(dummyThoughts);
-	console.log(thoughts);
 	return (
 		<div className={styles.root}>
 			<h2 className={styles.header}>
