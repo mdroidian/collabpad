@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ThoughtInput from '../ThoughtInput/ThoughtInput';
+import ThoughtList from '../ThoughtsList/ThoughtList';
 import './Main.css';
 
 const styles = {
@@ -18,6 +19,7 @@ function Main() {
 				Today | <span className={styles.headerSecondary}>Previous Days</span>
 			</h2>
 			<ThoughtInput setThoughts={setThoughts} />
+			<ThoughtList thoughts={thoughts} />
 		</div>
 	);
 }
