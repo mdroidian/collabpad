@@ -5,43 +5,43 @@ function Navbar() {
     <div className="Navbar">
       <nav className="bg-dark navbar navbar-dark navbar-expand-md">
         <div className="container">
-          <a className="navbar-brand" href="#">Assignment 02</a>
+          <a className="navbar-brand" id="home" href="/">Assignment 02</a>
           <button className="navbar-toggler" data-bs-target="#navbarContent" data-bs-toggle="collapse">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="mb-2 mb-md-0 ms-auto navbar-nav ">
               <li className="nav-item">
-                <a className="nav-link" href="#">Dashboard</a>
+                <a className="nav-link" href="#home">Dashboard</a>
               </li>
               <li className="dropdown nav-item">
-                <a className="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">Browse</a>
+                <a className="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#home">Browse</a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">Canvases</a>
+                    <a className="dropdown-item" href="#home">Canvases</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Journals</a>
+                    <a className="dropdown-item" href="#home">Journals</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Notes</a>
+                    <a className="dropdown-item" href="#home">Notes</a>
                   </li>
                 </ul>
               </li>
               <li className="dropdown nav-item">
-                <a className="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">Account</a>
+                <a className="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#home">Account</a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">Edit Profile</a>
+                    <a className="dropdown-item" href="#home">Edit Profile</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Settings</a>
+                    <a className="dropdown-item" href="#home">Settings</a>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Logout</a>
+                    <a className="dropdown-item" href="#home">Logout</a>
                   </li>
                 </ul>
               </li>
