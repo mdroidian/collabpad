@@ -5,7 +5,7 @@ function Navbar() {
     <div className="Navbar">
       <nav className="bg-dark navbar navbar-dark navbar-expand-md">
         <div className="container">
-          <a className="navbar-brand" id="home" href="/">Assignment 02</a>
+          <a className="navbar-brand" id="home" href="/">COLLABPAD</a>
           <button className="navbar-toggler" data-bs-target="#navbarContent" data-bs-toggle="collapse">
             <span className="navbar-toggler-icon"></span>
           </button>
